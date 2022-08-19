@@ -1,0 +1,21 @@
+<h1>Mi frigorífico</h1>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mi frigorífico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card *ngFor="let item of items">
+      <ion-item>
+        <h2>{{item.name}}</h2>
+        <p>Cantidad: {{item.units | foodStuffUnitsOfMeasure : item.amount }}</p>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>
