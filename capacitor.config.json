@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "igloo",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,8 @@
+{
+  "name": "igloo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "6446fa4a"
+}
