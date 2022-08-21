@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { FoodStuff } from '../models/food';
+import { FridgeService } from './fridge.service';
 
 @Component({
   selector: 'app-fridge',
@@ -9,8 +10,13 @@ import { FoodStuff } from '../models/food';
 export class FridgeComponent implements OnInit {
 
   public items: FoodStuff[] = [];
+  public class: string;
 
-  constructor() { }
+  public imgSrc: string[] = [];
+
+  constructor(
+    private fridgeService: FridgeService
+  ) { }
 
   public ngOnInit(): void {
     this.getItems();
@@ -25,8 +31,22 @@ export class FridgeComponent implements OnInit {
       group: 'Vegetables',
       expirationType: 'Short-lasting'
     };
+    const ham: FoodStuff = {
+      id: '2',
+      amount: 1,
+      units: 'package',
+      name: 'Jamón cocido',
+      group: 'Meat',
+      expirationType: 'Long-lasting'
+    };
+
+    this.fridgeService.getProductStuffImages(peppers.name).subscribe((result) => {
+      this.imgSrc = result.results.map((idx) => idx.urls.regular);
+      console.log(result);
+    });
 
     this.items.push(peppers);
+    this.items.push(ham);
   }
 
 }

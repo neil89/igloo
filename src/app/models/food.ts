@@ -11,7 +11,8 @@ export interface FoodStuff {
 export type UnitsOfMeasure =
   'kg' |
   'g' |
-  'units';
+  'units' |
+  'package';
 
 export type FoodGroup =
   'Vegetables' |
