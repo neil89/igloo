@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { FoodExpirationType, FoodGroup, UnitsOfMeasure } from '../models/food';
+import { FoodExpirationType, FoodGroup, UnitsOfMeasure } from '../models/food.model';
 
 @Pipe({ name: 'foodStuffUnitsOfMeasure' })
 export class FoodStuffUnitsOfMeasure implements PipeTransform {
