@@ -10,7 +10,7 @@ import { FridgeService } from './fridge.service';
 export class FridgeComponent implements OnInit {
 
   public items: FoodStuff[] = [];
-  public class: string;
+  public class = '';
 
   public imgSrc: string[] = [];
 
@@ -41,7 +41,7 @@ export class FridgeComponent implements OnInit {
     };
 
     this.fridgeService.getProductStuffImages(peppers.name).subscribe((result) => {
-      this.imgSrc = result.results.map((idx) => idx.urls.regular);
+      this.imgSrc = result.results.map((idx: any) => idx.urls.regular);
       console.log(result);
     });
 
